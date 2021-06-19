@@ -1,6 +1,6 @@
-@model Software_2.Models.ProductoH
+@model Software_2.Models.ProductoN
 <div class="background_edit background_total3 pt-5">
- <h1 class="white">Mostrar Caracteristicas del producto</h1>
+ <h1 class="white" >Asignar Caracteristica</h1>
 
 
 
@@ -13,27 +13,29 @@
             <div class="justify-content-center text-center">
               <div class="container justify-content-center text-center">
                   <div class="container col-md-10 p-4">
-  
-                    <form asp-controller="Producto" asp-action="MostrarCaracteristica">
+   
+                    <form asp-controller="Producto" asp-action="AsignarCaracteristicaN">
 
                     <input type="hidden" asp-for="ID" />
                     <input type="hidden" asp-for="Nombre" class="form-control" />
                     <input type="hidden" asp-for="Codigo" class="form-control" />
                     <input type="hidden" asp-for="Color" class="form-control" />
+                    <input type="hidden" asp-for="Sexo" class="form-control">
                     <input type="hidden" asp-for="Tipo" class="form-control">
-                    <input type="hidden" asp-for="Talla40" class="form-control">
-                    <input type="hidden" asp-for="Talla41" class="form-control" />
-                    <input type="hidden" asp-for="Talla42" class="form-control" />
-                    <input type="hidden" asp-for="Talla43" class="form-control" />
+                    <input type="hidden" asp-for="Talla25" class="form-control">
+                    <input type="hidden" asp-for="Talla26" class="form-control" />
+                    <input type="hidden" asp-for="Talla27" class="form-control" />
+                    <input type="hidden" asp-for="Talla28" class="form-control" />
+                    <input type="hidden" asp-for="Talla29" class="form-control" />
+                    <input type="hidden" asp-for="Talla30" class="form-control" />
                     
        <div class="form-group">
             <label class="control-label">Escribe las caracterisiticas del calzado</label>
             <input type="text" maxlength="60" minlength="5" asp-for="Descripcion" >
        </div>
-       <button class="btn btn-success"  value="Registrar">Volver</button>
+       <button type="submit" class="btn btn-success"  id="registrar" value="Registrar">Ingresar</button>
               
    </form>
-   
 
                 </div>
               </div>

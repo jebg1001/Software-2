@@ -84,6 +84,90 @@ namespace Software_2.Controllers
 
         }
 
+        public async Task<IActionResult> MostrarCaracteristicaM(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var registrarM = await _context.RegistrarM.FindAsync(id);
+            if (registrarM == null)
+            {
+                return NotFound();
+            }
+            return View(registrarM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult MostrarCaracteristicaM(int id, [Bind("ID,Nombre,Codigo,Color,Tipo,Descripcion,Talla35,Talla36,Talla37,Talla38,Talla39")] ProductoM registrarM)
+        {
+            if (id != registrarM.ID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                   
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    return NotFound();
+                    
+                }
+                TempData["prueba02"] = "prueba02";
+                return RedirectToAction(nameof(ListarM));
+            }
+            return View(registrarM); 
+
+        }
+
+        public async Task<IActionResult> MostrarCaracteristicaN(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var registrarN = await _context.RegistrarN.FindAsync(id);
+            if (registrarN == null)
+            {
+                return NotFound();
+            }
+            return View(registrarN);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult MostrarCaracteristicaN(int id, [Bind("ID,Nombre,Codigo,Color,Sexo,Tipo,Descripcion,Talla25,Talla26,Talla27,Talla28,Talla29,Talla30")] ProductoN registrarN)
+        {
+            if (id != registrarN.ID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                   
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    return NotFound();
+                    
+                }
+                TempData["prueba02"] = "prueba02";
+                return RedirectToAction(nameof(ListarN));
+            }
+            return View(registrarN); 
+
+        }
+
 
         public IActionResult InventarioH()
         {
@@ -277,7 +361,7 @@ namespace Software_2.Controllers
             return View(registrarH);
         }
 
-        public async Task<IActionResult> EditM(int? id)
+         public async Task<IActionResult> AsignarCaracteristicaM(int? id)
         {
             if (id == null)
             {
@@ -294,7 +378,7 @@ namespace Software_2.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditM(int id, [Bind("ID,Nombre,Codigo,Color,talla36,talla37,talla38,talla39")] ProductoM registrarM)
+        public async Task<IActionResult> AsignarCaracteristicaM(int id, [Bind("ID,Nombre,Codigo,Color,Tipo,Descripcion,Talla35,Talla36,Talla37,Talla38,Talla39")] ProductoM registrarM)
         {
             if (id != registrarM.ID)
             {
@@ -318,7 +402,49 @@ namespace Software_2.Controllers
             }
             return View(registrarM);
         }
+
         
+         public async Task<IActionResult> AsignarCaracteristicaN(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var registrarN = await _context.RegistrarN.FindAsync(id);
+            if (registrarN == null)
+            {
+                return NotFound();
+            }
+            return View(registrarN);
+        }
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AsignarCaracteristicaN(int id, [Bind("ID,Nombre,Codigo,Color,Sexo,Tipo,Descripcion,Talla25,Talla26,Talla27,Talla28,Talla29,Talla30")] ProductoN registrarN)
+        {
+            if (id != registrarN.ID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(registrarN);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    return NotFound();
+                    
+                }
+                TempData["prueba02"] = "prueba02";
+                return RedirectToAction(nameof(ListarN));
+            }
+            return View(registrarN);
+        }
         
         public IActionResult RegistroH()
         {

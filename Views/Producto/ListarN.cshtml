@@ -48,20 +48,20 @@
               </div>
 
               <div class="col-sm-3">
-              <h3 style="color: white;">
-                   <a  class="btn btn-primary"  asp-controller="Producto" asp-action="AsignarCaracteristica">Asignar Caracteristica</a>
-             </h3>  
-            </div>
-
-            <div class="col-sm-3">
-              <h3 style="color: white;">
-                <a asp-controller="Producto" asp-action="MostrarCaracteristicaa" class="btn btn-warning">Mostrar Caracteristicas</a>
-              </h3>  
-              </div>
-
-            <div class="col-sm-2">
                                 <h3 style="color: white;">
-                                    <a  class="btn btn-danger" id="eliminar5"  asp-controller="Producto" asp-action="DeleteN" asp-route-id="@item.ID">Eliminar</a>
+                                    <a  class="btn btn-primary"  asp-controller="Producto" asp-action="AsignarCaracteristicaN" asp-route-id="@item.ID">Asignar Caracteristica</a>
+                                </h3>  
+                              </div>
+
+                              <div class="col-sm-3">
+                                <h3 style="color: white;">
+                                  <a asp-controller="Producto" asp-action="MostrarCaracteristicaN" asp-route-id="@item.ID" class="btn btn-warning">Mostrar Caracteristicas</a>
+                                </h3>  
+                              </div>
+
+                              <div class="col-sm-2">
+                                <h3 style="color: white;">
+                                    <a  class="btn btn-danger" id="eliminar1" asp-controller="Producto" asp-action="DeleteN" asp-route-id="@item.ID" >Eliminar</a>
                                 </h3>  
                               </div>
 
