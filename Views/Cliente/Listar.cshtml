@@ -1,0 +1,98 @@
+@model IEnumerable<Software_2.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<div class="background_edit background_total3">
+
+
+
+<div class="container text-center pt-5 ">
+<h1 style="color: white">Lista de Clientes</h1>
+
+<p class="pt-3">
+    <button class="btn btn-primary" onclick="window.location='@Url.Action("Index", "Cliente")'">Registrar</button>
+</p>
+
+
+
+
+@using (Html.BeginForm("Listar", "Cliente", FormMethod.Get))
+{
+    <p style="color: white">
+        Filtrar clientes: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Search"  />
+    </p>
+}
+
+
+<table class="table text-center" >
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Celular)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Direccion)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Cantidad)</th>
+            <th scope="col">Acciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model)
+    {
+          <tr class="bg-secondary align-items align-center">
+              
+            <th scope="row">@Html.DisplayFor(modelItem => item.Nombre)</th>
+            <th scope="row">@Html.DisplayFor(modelItem => item.Celular)</th>
+            <th scope="row">@Html.DisplayFor(modelItem => item.Direccion)</th>
+            <th scope="row">@Html.DisplayFor(modelItem => item.Cantidad)</th>
+            <th scope="row">
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.ID">Editar</a>
+            </th> 
+
+          </tr>
+    }
+        </tbody>
+      </table> 
+
+
+</div>
+</div>
+
+
+
+    <script>
+        
+        var x = document.getElementById('hola01').value;
+
+        if(x == "hola") {
+        
+            Swal.fire(
+                'Registro exitoso',
+                'El Cliente ha sido registrado exitosamente',
+                'success'
+            )
+  
+        }
+
+       
+
+    </script>
+
+   <script>
+        
+        var y = document.getElementById('prueba02').value;
+
+        if(y == "hola") {
+
+            Swal.fire(
+                'Editado correctamente',
+                'El Cliente se ha editado correctamente',
+                'success'
+            )
+        }
+   </script> 
+

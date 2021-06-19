@@ -1,0 +1,42 @@
+@model IEnumerable<Software_2.Models.RegistroS>
+
+<div class="background_edit background_total2">
+
+
+<div class="p-5 col-xl-5 text-center container">
+    
+    <div class="p-3">
+        <a sp-controller="Producto" asp-action="RegistrarSalidaCalzado" class="btn btn-success">Registrar Salida de calzado</a>
+    </div>
+</div>
+
+      <div class="container p-5">
+        <table class="table text-center" >
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Color</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Cantidad Vendidas</th>
+            <th scope="col">Acciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+              @foreach (var item in Model)
+    {
+          <tr class="bg-secondary">
+            <th scope="row">@Html.DisplayFor(modelItem => item.Nombre)</th>
+            <th>@Html.DisplayFor(modelItem => item.Codigo)</th>
+            <th>@Html.DisplayFor(modelItem => item.Color)</th>
+            <th>@Html.DisplayFor(model => item.Sexo)</th>
+            <th>@Html.DisplayFor(modelItem => item.Cantidad)</th>
+
+            <th><a asp-action="EntradaSalida" asp-route-id="@item.ID" id="agregar" class="btn btn-success">Agregar</a></th>
+
+          </tr>
+    }
+        </tbody>
+      </table>     
+      </div>

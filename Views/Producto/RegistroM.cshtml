@@ -1,0 +1,84 @@
+@model Software_2.Models.ProductoM
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+<div class="background_edit background_total pt-5">
+ <h1 class="white" >Registrar Sección Mujer</h1>
+
+
+
+<section>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center" >
+      <div class="col-xl-5">
+          <div class="card">
+            <div class="justify-content-center text-center">
+              <div class="container justify-content-center text-center">
+                  <div class="container col-md-10 p-4">
+   
+                    <form asp-controller="Producto" asp-action="RegistrarM">
+       <div class="form-group">
+            <label class="control-label">Nombre:</label>
+            <input asp-for="Nombre" class="form-control"/>
+       </div>
+       <div class="form-group">
+            <label class="control-label">Código:</label>
+            <input asp-for="Codigo" class="form-control"/>
+       </div>
+            <div class="form-group">
+            <label class="control-label">Color:</label>
+            <select asp-for="Color" class="form-control">
+                <option value="amarillo">Amarillo</option>
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <option value="morado">Morado</option>
+                <option value="negro">Negro</option>
+                <option value="naranja">Naranja</option>
+                <option value="rosado">Rosado</option>
+              </select>
+       </div>
+            <div class="form-group">
+            <label class="control-label">Tipo:</label>
+            <select asp-for="Tipo" class="form-control">
+                <option value="zapatillas">Zapatillas</option>
+                <option value="sandalias">Sandalias</option>
+            </select>
+       </div>
+            <div class="form-group">
+            <label class="control-label">Talla 35:</label>
+            <input asp-for="Talla35" class="form-control"/>
+       </div>
+            <div class="form-group">
+            <label class="control-label">Talla 36:</label>
+            <input asp-for="Talla36" class="form-control"/>
+       </div>
+              <div class="form-group">
+            <label class="control-label">Talla 37:</label>
+            <input asp-for="Talla37" class="form-control"/>
+       </div>
+              <div class="form-group">
+            <label class="control-label">Talla 38:</label>
+            <input asp-for="Talla38" class="form-control"/>
+       </div>
+              <div class="form-group">
+            <label class="control-label">Talla 39:</label>
+            <input asp-for="Talla39" class="form-control"/>
+       </div>
+              <input class="btn btn-primary" id="registrar"  type="submit" value="Registrar">
+   </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</section>
+
+</div>

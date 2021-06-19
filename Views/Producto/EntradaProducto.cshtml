@@ -1,0 +1,130 @@
+@model Software_2.Models.ProductoH
+
+
+@{
+    ViewData["Title"] = "Edición de Producto";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+<div class="background_edit background_total3 pt-5">
+
+<div class="container">
+<div class="row justify-content-center text-center">
+    <div>
+        <h1 style="color: white;">Agregar Entrada del Producto</h1>
+
+        <div class="container pt-5">
+        <table class="table text-dark table-light ">
+            <thead class="thead-dark">
+                <tr>
+                        <th scope="col">
+                            Nombre
+                        </th>
+                        <th scope="col">
+                            Codigo
+                        </th>
+                        <th scope="col">
+                            Color
+                        </th>
+                        <th scope="col">
+                            Cantidad talla 40
+                        </th>
+                </tr>
+            </thead>
+                <tr>
+                        <td scope="col">
+                          @Html.DisplayFor(model => model.Nombre)
+                        </td>
+
+                        <td scope="col">
+                          @Html.DisplayFor(model => model.Codigo)
+                        </td>
+
+                        <td scope="col">
+                          @Html.DisplayFor(model => model.Color)
+                        </td>
+                        
+                        <td scope="col">
+                          @Html.DisplayFor(model => model.Talla40)
+                        </td>
+
+                </tr>
+            <tbody>
+              
+            </tbody>
+        </table> 
+
+        </div>
+        <form asp-controller="Producto" asp-action="EntradaProducto" >
+            <input type="hidden" asp-for="ID" />
+            <input type="hidden" asp-for="Nombre" class="form-control" />
+            <input type="hidden" asp-for="Codigo" class="form-control" />
+            <input type="hidden" asp-for="Color" class="form-control" />
+            <input type="hidden" asp-for="Tipo" class="form-control">
+            <input type="hidden" asp-for="Descripcion" class="form-control">
+            <input type="hidden" asp-for="Talla41" class="form-control" />
+            <input type="hidden" asp-for="Talla42" class="form-control" />
+            <input type="hidden" asp-for="Talla43" class="form-control" />
+            
+          
+              
+            <div class="form-group">
+                <label class="control-label" style="color: white;">Cantidad de productos a ingresar</label>
+                <div class="container col-sm-6 text-center">
+                  <input asp-for="Talla40" style="background-color:white" class="form-control" />
+                </div>
+                
+            </div>      
+       
+                
+             
+             
+            <div class="form-group" align="center">
+                 <button type="submit" id="agregarEntrada" class="btn btn-success">Ingresar</button> 
+                 <button  class="btn btn-danger" id="cancelar" onclick="window.location='@Url.Action("ListarH", "Producto")'" >Cancelar</button> 
+
+            </div>                
+
+        </form>
+            
+    
+    </div>
+</div>
+</div>
+</div>
+<script>
+    document.querySelector('#Editar').addEventListener('submit', function(e) {
+      var form = this;
+      
+      e.preventDefault();
+      
+      swal({
+          title: "¿Está seguro de la acción?",
+          text: "Esto cambiará los datos del producto",
+          icon: "warning",
+          buttons: [
+            'Cancelar',
+            'Continuar'
+          ],
+          dangerMode: true,
+        }).then(function(isConfirm) {
+          if (isConfirm) {
+           
+              form.submit();
+          
+          } else {
+            swal("Acción cancelada", "El producto no se ha modificado", "error");
+          }
+        });
+    });
+    
+  </script>
+  
+  <style>
+    .swal-button--confirm {
+      background-color: #DD6B55;
+    }
+  </style>

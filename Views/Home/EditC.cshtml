@@ -1,0 +1,95 @@
+@model Software_2.Models.Registrar
+
+@{
+    ViewData["Title"] = "Usuario";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<div class="row justify-content-center">
+    <div class="col-md-4">  
+
+     
+        <h1 class="display-4">Editar Usuario</h1>
+        <div align="right">
+        <button  class="btn btn-secondary"  onclick="window.location='@Url.Action("Listar", "Home")'" >Cancelar</button> 
+        </div>
+        <form asp-controller="Home" asp-action="Edit">
+              <div class="form-group">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+               </div>
+
+            <div class="form-group">
+                <label asp-for="DNI" class="control-label"></label>
+                <input asp-for="DNI" class="form-control" />
+                <span asp-validation-for="DNI" class="text-danger"></span>
+            </div>                  
+                   
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+            </div>               
+              <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+     
+              <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control" />
+            </div>      
+              <div class="form-group">
+                <label asp-for="Cargo" class="control-label"></label>
+                <input asp-for="Cargo" class="form-control" />
+            </div>      
+                  <div class="form-group">
+                <label asp-for="Contraseña" class="control-label"></label>
+                <input asp-for="Contraseña" class="form-control" />
+            </div>   
+             
+            <div class="form-group">
+                 <button class="btn btn-primary" type="submit" class="btn btn-default">Actualizar</button> 
+            </div>                
+
+        </form>
+            
+        <td>@Html.DisplayTextFor(model => model.Respuesta)</td>    
+    
+    </div>
+</div>
+</div>
+
+<script>
+    document.querySelector('#Editar').addEventListener('submit', function(e) {
+      var form = this;
+      
+      e.preventDefault();
+      
+      swal({
+          title: "¿Está seguro de la acción?",
+          text: "Esto cambiará los datos del Usuario",
+          icon: "warning",
+          buttons: [
+            'Cancelar',
+            'Continuar'
+          ],
+          dangerMode: true,
+        }).then(function(isConfirm) {
+          if (isConfirm) {
+           
+              form.submit();
+          
+          } else {
+            swal("Acción cancelada", "El Usuario no se ha modificado", "error");
+          }
+        });
+    });
+
+    
+  </script>
+  
+  <style>
+    .swal-button--confirm {
+      background-color: #DD6B55;
+    }
+  </style>

@@ -1,0 +1,70 @@
+@model Software_2.Models.Cliente
+
+@{
+    ViewData["Title"] = "Registro de Cliente";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<div class="background_edit background_total3 pt-5">
+ <h1 class="white" >Registrar Clientes</h1>
+
+
+
+
+<section class="pt-5">
+
+  <div class="container-fluid">
+    <div class="row justify-content-center" >
+      <div class="col-xl-5">
+          <div class="card">
+            <div class="justify-content-center text-center">
+              <div class="container justify-content-center text-center">
+                  <div class="container col-md-10 p-4">
+   
+                    <form asp-controller="Cliente" asp-action="Enviar">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Nombres y Apellidos</label>
+                <input asp-for="Nombre" class="form-control"/>
+                
+            </div class="form-group">
+
+            <div class="form-group">
+                <label   class="control-label">Celular</label>
+                <input asp-for="Celular" class="form-control"/>
+                
+
+            </div>
+
+            <div class="form-group">
+              <label class="control-label">Direccion</label> 
+              <input asp-for="Direccion" class="form-control" />
+              
+
+            </div>
+
+            <div class="form-group">
+              <label class="control-label">Cantidad de Compras</label> 
+              <input asp-for="Cantidad" class="form-control" />
+              
+
+            </div>
+
+           
+
+            <div class="form-group text-center" >
+             <button type="submit" class="btn btn-primary" id="registrar1" value="Enviar">Registrar</button>
+            </div>
+      </form>
+ 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</section>
+
+</div>

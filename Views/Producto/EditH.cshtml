@@ -1,0 +1,165 @@
+@model Software_2.Models.ProductoH
+
+@{
+    ViewData["Title"] = "Edición de Producto";
+}
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+<div class="background_edit background_total pt-5">
+ <h1 class="white" >Agregar tallas de calzado</h1>
+
+
+
+<section>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center" >
+      <div class="col-xl-5">
+          <div class="card">
+            <div class="justify-content-center text-center">
+              <div class="container justify-content-center text-center">
+                  <div class="container col-md-10 p-4">
+                              <form asp-controller="Producto" asp-action="EditH" id="Editar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            
+      
+              <div class="form-group">
+            <label class="control-label">Talla 40:</label>
+            <input asp-for="Talla40" class="form-control"/>
+       </div>
+              <div class="form-group">
+            <label class="control-label">Talla 41:</label>
+            <input asp-for="Talla41" class="form-control"/>
+       </div>
+              <div class="form-group">
+            <label class="control-label">Talla 42:</label>
+            <input asp-for="Talla42" class="form-control"/>
+       </div>
+              <div class="form-group">
+            <label class="control-label">Talla 43:</label>
+            <input asp-for="Talla43" class="form-control"/>
+       </div>     
+             
+            <div class="form-group" align="center">
+                 <button type="submit" class="btn btn-primary">Agregar</button> 
+          
+
+            </div>                
+
+        </form>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</section>
+
+</div>
+
+<script>
+    document.querySelector('#Editar').addEventListener('submit', function(e) {
+      var form = this;
+      
+      e.preventDefault();
+      
+      swal({
+          title: "¿Está seguro de la acción?",
+          text: "Esto cambiará los datos del producto",
+          icon: "warning",
+          buttons: [
+            'Cancelar',
+            'Continuar'
+          ],
+          dangerMode: true,
+        }).then(function(isConfirm) {
+          if (isConfirm) {
+           
+              form.submit();
+          
+          } else {
+            swal("Acción cancelada", "El producto no se ha modificado", "error");
+          }
+        });
+    });
+
+    
+  </script>
+  
+  <style>
+    .swal-button--confirm {
+      background-color: #DD6B55;
+    }
+  </style>
+
+
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+<div class="background_edit background_total pt-5">
+ <h1 class="white" >Agregar tallas de calzado</h1>
+
+
+
+<section>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center" >
+      <div class="col-xl-5">
+          <div class="card">
+            <div class="justify-content-center text-center">
+              <div class="container justify-content-center text-center">
+                  <div class="container col-md-10 p-4">
+                              <form asp-controller="Producto" asp-action="EditH" id="Editar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            
+      
+              <div class="form-group">
+            <label class="control-label">Talla 40:</label>
+            <input asp-for="Talla40" class="form-control"/>
+       </div>
+              <div class="form-group">
+            <label class="control-label">Talla 41:</label>
+            <input asp-for="Talla41" class="form-control"/>
+       </div>
+              <div class="form-group">
+            <label class="control-label">Talla 42:</label>
+            <input asp-for="Talla42" class="form-control"/>
+       </div>
+              <div class="form-group">
+            <label class="control-label">Talla 43:</label>
+            <input asp-for="Talla43" class="form-control"/>
+       </div>     
+             
+            <div class="form-group" align="center">
+                 <button type="submit" class="btn btn-primary">Agregar</button> 
+          
+
+            </div>                
+
+        </form>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</section>
+
+</div>

@@ -1,0 +1,207 @@
+@model IEnumerable<Software_2.Models.ProductoN>
+
+
+
+@{
+    ViewData["Title"] = "Productos";
+}
+
+
+<div class="background_edit background_total2">
+
+
+<div class="container p-5">
+<h1 class="white">Lista inventario de calzados de niños</h1>
+
+
+
+
+<div id="Zapatillas" class="p-4">
+
+
+<div class="row">
+        <div class="col-sm-2">
+          <h1 style="color: white;">Zapatillas</h1> 
+        </div>
+
+    </div>
+
+
+
+@foreach (var item in Model)
+    {
+
+      @if(item.Tipo.Equals("zapatillas"))
+      {
+      <div class="container text-center align-items p-5">
+
+          <div class="row">
+              <div class="col-sm-4">
+                <h3 style="color: white;">
+                @Html.DisplayFor(modelItem => item.Nombre) 
+                Codigo
+                @Html.DisplayFor(modelItem => item.Codigo)
+                </h3>  
+              </div>
+
+          </div>
+      </div>
+
+
+      <table class="table text-center" >
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Talla</th>
+            <th scope="col">Cantidad</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-secondary">
+            <th scope="row">25</th>
+            <th>
+            @Html.DisplayFor(modelItem => item.Talla25)
+            </th>
+                      </tr>
+          <tr class="bg-secondary">
+            <th scope="row">26</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla26)
+            </td>
+            
+          </tr>
+          <tr class="bg-secondary">
+            <th scope="row">27</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla27)
+            </td>
+            
+          </tr>
+          <tr class="bg-secondary">
+            <th scope="row">28</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla28)
+            </td>
+            
+          </tr>
+          <tr class="bg-secondary">
+            <th scope="row">29</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla29)
+            </td>
+            
+          </tr>
+          <tr class="bg-secondary">
+            <th scope="row">30</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla30)
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>   
+
+      }
+
+  }
+</div>
+
+
+<div>
+
+
+
+
+<div id="Zapatillas" class="p-4">
+
+
+<div class="row">
+        <div class="col-sm-2">
+          <h1 style="color: white;">Sandalias</h1> 
+        </div>
+
+    </div>
+
+
+
+
+@foreach (var item in Model)
+    {
+
+      @if(item.Tipo.Equals("sandalias"))
+      {
+      <div class="container text-center align-items p-5">
+
+          <div class="row">
+              <div class="col-sm-4">
+                <h3 style="color: white;">
+                @Html.DisplayFor(modelItem => item.Nombre) 
+                Codigo
+                @Html.DisplayFor(modelItem => item.Codigo)
+                </h3>  
+              </div>
+
+          </div>
+      </div>
+
+
+      <table class="table text-center" >
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Talla</th>
+            <th scope="col">Cantidad</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-secondary">
+            <th scope="row">25</th>
+            <th>
+            @Html.DisplayFor(modelItem => item.Talla25)
+            </th>
+                      </tr>
+          <tr class="bg-secondary">
+            <th scope="row">26</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla26)
+            </td>
+            
+          </tr>
+          <tr class="bg-secondary">
+            <th scope="row">27</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla27)
+            </td>
+            
+          </tr>
+          <tr class="bg-secondary">
+            <th scope="row">28</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla28)
+            </td>
+            
+          </tr>
+          <tr class="bg-secondary">
+            <th scope="row">29</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla29)
+            </td>
+            
+          </tr>
+          <tr class="bg-secondary">
+            <th scope="row">30</th>
+            <td>
+            @Html.DisplayFor(modelItem => item.Talla30)
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>      
+      }
+
+  }   
+</div>
+
+
+<div>
+
